@@ -1,8 +1,12 @@
+import { useState } from "react";
+import Navbar from "./components/navbar/Navbar";
+
 function App() {
+  const [selectedPage, setSelectedPage] = useState<string>("home");
 
   return (
     <>
-      <div className='bg-gray-100 text-3xl font-dmsans'>Whereas disregard and contempt for human rights have resulted</div>
+      <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
     </>
   );
 }
