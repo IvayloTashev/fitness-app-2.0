@@ -1,6 +1,7 @@
 import React from "react";
 import { SelectedPage } from "../../shared/types";
 import ActionButton from "../../shared/ActionButton";
+import EvolveText from "../../assets/EvolveText.png";
 import HomePageText from "../../assets/HomePageText.png";
 import HomePageGraphic from "../../assets/HomePageGraphic.png";
 import SponsorRedBull from "../../assets/SponsorRedBull.png";
@@ -18,8 +19,8 @@ const Home = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   return (
-    <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
-      <div className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6">
+    <section id="home h-full-md" className="gap-16 bg-gray-20 py-10 md:pb-0">
+      <div id="flex-md" className="mx-auto w-5/6 md:h-5/6">
         <div className="z-10 mt-32 md:basis-3/5">
           <motion.div
             className="md:-mt-20"
@@ -33,11 +34,20 @@ const Home = ({ setSelectedPage }: Props) => {
             }}
           >
             <div className="relative">
+              {isAboveMediumScreens && (
+                <div>
+                  <img
+                    src={EvolveText}
+                    alt="evolve-text"
+                    className="absolute -left-20 -top-20 z-0"
+                  />
+                </div>
+              )}
               <div>
-                <img src={HomePageText} alt="home-page-text" />
+                <img src={HomePageText} alt="home-page-text" className="relative z-10"/>
               </div>
             </div>
-            <p className="mt-8 text-sm md:text-start">
+            <p className="mt-8 text-sm">
               Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
               Studios to get the Body Shapes That you Dream of.. Get Your Dream
               Body Now.
@@ -67,7 +77,7 @@ const Home = ({ setSelectedPage }: Props) => {
           </motion.div>
         </div>
 
-        <div className="flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-end">
+        <div className="flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end">
           <img src={HomePageGraphic} alt="hope-page-image" />
         </div>
       </div>

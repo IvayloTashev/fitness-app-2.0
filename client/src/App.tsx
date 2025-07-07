@@ -14,9 +14,9 @@ function App() {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
         setSelectedPage(SelectedPage.Home);
-      } else {
-        setIsTopOfPage(false);
       }
+
+      if (window.scrollY !== 0) setIsTopOfPage(false);
     };
 
     window.addEventListener("scroll", handleScroll);

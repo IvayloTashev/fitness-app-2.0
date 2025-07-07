@@ -33,6 +33,16 @@ body,
     --bg-evolvetext: url('./assets/EvolveText.png')
 }
 
+@media (min-width: 1060px) {
+    #flex-md {
+      display: flex;
+    }
+
+    #h-full-md {
+        height: 100%;
+    }
+  }
+
 /* content: {
     evolvetext: "url('./assets/EvolveText.png')",
         abstractwaves: "url('./assets/AbstractWaves.png')",
