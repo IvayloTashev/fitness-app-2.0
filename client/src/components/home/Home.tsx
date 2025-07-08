@@ -19,8 +19,11 @@ const Home = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   return (
-    <section id="home h-full-md" className="gap-16 bg-gray-20 py-10 md:pb-0">
-      <div id="flex-md" className="mx-auto w-5/6 md:h-5/6">
+    <section id="home" className="gap-16 bg-gray-20 py-10 md:pb-0 h-full-md">
+      <motion.div
+        className="mx-auto w-5/6 md:h-5/6 flex-md"
+        onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
+      >
         <div className="z-10 mt-32 md:basis-3/5">
           <motion.div
             className="md:-mt-20"
@@ -44,7 +47,11 @@ const Home = ({ setSelectedPage }: Props) => {
                 </div>
               )}
               <div>
-                <img src={HomePageText} alt="home-page-text" className="relative z-10"/>
+                <img
+                  src={HomePageText}
+                  alt="home-page-text"
+                  className="relative z-10"
+                />
               </div>
             </div>
             <p className="mt-8 text-sm">
@@ -80,7 +87,7 @@ const Home = ({ setSelectedPage }: Props) => {
         <div className="flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end">
           <img src={HomePageGraphic} alt="hope-page-image" />
         </div>
-      </div>
+      </motion.div>
 
       {isAboveMediumScreens && (
         <div className="h-[150px] w-full bg-primary-100 py-10">

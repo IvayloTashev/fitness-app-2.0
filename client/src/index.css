@@ -34,11 +34,11 @@ body,
 }
 
 @media (min-width: 1060px) {
-    #flex-md {
+    .flex-md {
       display: flex;
     }
 
-    #h-full-md {
+    .h-full-md {
         height: 100%;
     }
   }
