@@ -10,6 +10,13 @@ import HText from "../../shared/HText";
 import Benefit from "./Benefit";
 import { benefitsContent } from "../../shared/utils";
 
+const container = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
@@ -20,15 +27,31 @@ const Benefints = ({ setSelectedPage }: Props) => {
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
       >
-        <div className="md:my-5 md:w-3/5">
+        <motion.div
+          className="md:my-5 md:w-3/5"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+        >
           <HText>MORE THAN JUST GYM.</HText>
           <p className="my-5 text-sm">
             We provide world class fitness equipment, trainers and classes to
             get you to your ultimate fitness goals with ease. We provide true
             care into each and every member.
           </p>
-        </div>
-        <div className="flex-md items-center justify-between gap-5 mt-5">
+        </motion.div>
+        <motion.div
+          className="flex-md items-center justify-between gap-5 mt-5"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={container}
+        >
           {benefitsContent.map((benefit: BenefitType) => (
             <Benefit
               key={benefit.title}
@@ -38,7 +61,7 @@ const Benefints = ({ setSelectedPage }: Props) => {
               setSelectedPage={setSelectedPage}
             />
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
