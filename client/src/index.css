@@ -41,6 +41,10 @@ body,
     .h-full-md {
         height: 100%;
     }
+
+    .justify-between-md {
+        justify-content: space-between;
+    }
   }
 
 /* content: {
