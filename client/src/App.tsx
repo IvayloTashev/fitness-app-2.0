@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 import { SelectedPage } from "./shared/types";
 import Home from "./components/home/Home";
 import Benefints from "./components/benefits/Benefints";
+import OurClasses from "./components/classes/OurClasses";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -32,7 +33,8 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <Home setSelectedPage={setSelectedPage} />
-      <Benefints setSelectedPage={setSelectedPage}/>
+      <Benefints setSelectedPage={setSelectedPage} />
+      <OurClasses setSelectedPage={setSelectedPage} />
     </>
   );
 }
